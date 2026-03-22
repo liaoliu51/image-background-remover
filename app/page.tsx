@@ -12,7 +12,11 @@ interface ProcessedImage {
 }
 
 export default function Home() {
-  const [apiKey, setApiKey] = useState<string>('')
+  const [apiKey, setApiKey] = useState<string>(
+    typeof process !== 'undefined' && process.env.NEXT_PUBLIC_REMOVEBG_API_KEY
+      ? process.env.NEXT_PUBLIC_REMOVEBG_API_KEY
+      : ''
+  )
   const [showApiKeyInput, setShowApiKeyInput] = useState(false)
   const [images, setImages] = useState<ProcessedImage[]>([])
   const [isProcessing, setIsProcessing] = useState(false)

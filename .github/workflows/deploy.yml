@@ -36,3 +36,6 @@ jobs:
           projectName: image-background-remover
           directory: out
           branch: main
+          wranglerVersion: '3'
+        env:
+          REMOVE_BG_API_KEY: srnDJAPqdVrin8qkqtkT8A1r
